@@ -23,7 +23,7 @@ int main (int argc, char *argv[], char *envp[]) {
 	}
 
 	// now for the environmet variable
-	i = 1;
+	i = 0;
 	while (envp[i] != NULL) {
 		
 		printf("\nenv var %d : %s", i, envp[i]);

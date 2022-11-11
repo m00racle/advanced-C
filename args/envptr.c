@@ -25,8 +25,9 @@ int main (int argc, char *argv[], char **env_ptr) {
 	// now for the environmet variable
 	i = 0;
 	while (*env_ptr != NULL) {
-		i++;
+		
 		printf("\nenv var %d : %s", i, *(env_ptr++));
+		i++;
 	}
 
 	printf("\n");
