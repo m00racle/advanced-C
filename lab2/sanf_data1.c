@@ -25,4 +25,7 @@ int main()
 	
 	printf("size of c = %d, %d\n", sizeof(char), sizeof(c));
 	printf("size of cp = %d, %d\n", sizeof(*cp), sizeof(cp));
+
+	printf("size of s = %d, %d\n", sizeof(short), sizeof(s));
+	printf("size of sp = %d, %d\n", sizeof(*sp), sizeof(sp));
 }
