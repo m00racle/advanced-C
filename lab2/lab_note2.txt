@@ -2,3 +2,71 @@ This is the lab note for lab 2:
 
 for the run :
 
+	char c, *cp;
+	short s, *sp;
+	int i, *ip;
+	long l, *lp;
+	long long ll, *llp;
+	float f;
+	double df;
+
+	//void v, *vp;
+	//void *vp
+	// un-comment these lines if wish to run the code
+	
+	printf("size of c = %d, %d\n", sizeof(char), sizeof(c));
+	printf("size of cp = %d, %d\n", sizeof(*cp), sizeof(cp));
+size of c = 1, 1
+size of cp = 1, 8
+
+	printf("size of s = %d, %d\n", sizeof(short), sizeof(s));
+	printf("size of sp = %d, %d\n", sizeof(*sp), sizeof(sp));
+size of s = 2, 2
+size of sp = 2, 8
+
+	printf("size of i = %d, %d\n", sizeof(int), sizeof(i));
+	printf("size of ip = %d, %d\n", sizeof(*ip), sizeof(ip));
+size of i = 4, 4
+size of ip = 4, 8
+
+	printf("size of l = %d, %d\n", sizeof(long), sizeof(l));
+	printf("size of lp = %d, %d\n", sizeof(*lp), sizeof(lp));
+size of l = 8, 8
+size of lp = 8, 8
+
+	printf("size of ll = %d, %d\n", sizeof(long long), sizeof(ll));
+	printf("size of llp = %d, %d\n", sizeof(*llp), sizeof(llp));
+size of ll = 8, 8
+size of llp = 8, 8
+
+	printf("size of f = %d, %d\n", sizeof(float), sizeof(f));
+	printf("size of fp = %d, %d\n", sizeof(*fp), sizeof(fp));
+size of f = 4, 4
+size of fp = 4, 8
+
+	printf("size of df = %d, %d\n", sizeof(double), sizeof(df));
+	printf("size of dfp = %d, %d\n", sizeof(*dfp), sizeof(dfp));
+size of df = 8, 8
+size of dfp = 8, 8
+
+	printf("size of v = %d, %d\n", sizeof(void), sizeof(v));
+sanf_data1.c: In function ‘main’:
+sanf_data1.c:24:14: error: variable or field ‘v’ declared void
+   24 |         void v, *vp;
+      |              ^
+sanf_data1.c:49:9: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘printf’
+   49 |         printf("size of v = %d, %d\n", sizeof(void), sizeof(v));
+      |         ^~~~~~
+
+	printf("size of vp = %d, %d\n", sizeof(*vp), sizeof(vp));
+sanf_data1.c:24:14: error: variable or field ‘v’ declared void
+   24 |         void v, *vp;
+
+
+	printf("size of vp = %d\n", sizeof(vp));
+sanf_data1.c: In function ‘main’:
+sanf_data1.c:24:14: error: variable or field ‘v’ declared void
+   24 |         void v, *vp;
+      |              ^
+
+NOTE: the problem already arise when declaring void v, : error variable or field 'v' declared void.
