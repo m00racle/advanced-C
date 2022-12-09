@@ -19,7 +19,7 @@ int main(int argc, char *argv[]) {
     int i = 0;
 
     // test argc :
-    printf("number of arguments: %d", argc);
+    printf("number of arguments: %d\n", argc);
 
     if (argc > 1) {
 
