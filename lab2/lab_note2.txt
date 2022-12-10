@@ -71,6 +71,13 @@ sanf_data1.c:24:14: error: variable or field ‘v’ declared void
 
 NOTE: the problem already arise when declaring void v, : error variable or field 'v' declared void.
 
+NOTE void v; IS WHAT MAKES IT WRONG
+void *v IS OKAY
+
+WARNING: when you:
+printf(sizeof(void)); -> It will return 1 which is NOT MAKE ANY SENSE
+THIS IS SYSTEM PREFERNCE when user put this code. The real size of VOID SHOULD BE 0 NOT 1
+
 	printf("size of 100 = %d\n", sizeof(100));
 size of 100 = 4
 
