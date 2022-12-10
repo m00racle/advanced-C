@@ -47,6 +47,12 @@ int main()
 	printf("size of df = %d, %d\n", sizeof(double), sizeof(df));
 	printf("size of dfp = %d, %d\n", sizeof(*dfp), sizeof(dfp));
 
+	printf("size of 100 = %d\n", sizeof(100));
+
+	printf("size of 0xFFFFFFFF = %d\n", sizeof(0xFFFFFFFF));
+
+	printf("size of 0xFFFFFFFFFF = %d\n", sizeof(0xFFFFFFFFFF));
+
 //	WARNING: These code when un-commented will invoke compiler error:
 //	printf("size of v = %d, %d\n", sizeof(void), sizeof(v));
 //	printf("size of vp = %d\n", sizeof(vp));

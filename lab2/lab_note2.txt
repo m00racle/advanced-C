@@ -70,3 +70,12 @@ sanf_data1.c:24:14: error: variable or field ‘v’ declared void
       |              ^
 
 NOTE: the problem already arise when declaring void v, : error variable or field 'v' declared void.
+
+	printf("size of 100 = %d\n", sizeof(100));
+size of 100 = 4
+
+	printf("size of 0xFFFFFFFF = %d\n", sizeof(0xFFFFFFFF));
+size of 0xFFFFFFFF = 4
+
+	printf("size of 0xFFFFFFFFFF = %d\n", sizeof(0xFFFFFFFFFF));
+size of 0xFFFFFFFFFF = 8
