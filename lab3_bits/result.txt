@@ -1,0 +1,26 @@
+$ cc sf-datatype-binary.c -o displayed.out 
+sf-datatype-binary.c: In function ‘main’:
+sf-datatype-binary.c:18:57: warning: overflow in conversion from ‘int’ to ‘char’ changes value from ‘256’ to ‘0’ [-Woverflow]
+   18 |         printf("c = 256, displayed value c = %d\n", c = 256);
+
+This warning come out because I try to display 256 in char data type 
+memory allocation which is not long enough
+
+$ ./displayed.out 
+c = 255, displayed value c = -1
+c = 128, displayed value c = -128
+c = -1 , displayed value c = ffffffff
+c = 256, displayed value c = 0
+
+But When I run ./displayed.out it still displayed as 0 and not overflow. 
+(Read the review for more info)
+
+Full Run Result of lab3 sf-datatype-binary.c:
+$ ./displayed.out 
+c = 255, displayed value c = -1
+c = 128, displayed value c = -128
+c = -1 , displayed value c = ffffffff
+c = 256, displayed value c = 0
+i = -2 , displayed value i = fffffffe
+i = 256, displayed value i = 100
+i =-256, displayed value i = ffffff00
