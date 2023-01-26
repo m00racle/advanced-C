@@ -13,6 +13,8 @@ int main()
 
 	// print c in decimal int placehoder
 	printf("c = 255, displayed value c = %d\n", c = 255);
+	printf("c = 128, displayed value c = %d\n", c = 128);
+	printf("c = -1 , displayed value c = %x\n", c = -1);
 
 	return 0;
 }
