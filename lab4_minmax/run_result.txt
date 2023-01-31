@@ -1,0 +1,24 @@
+[m00racle@arch1VM lab4_minmax]$ cc shortmax.c 
+[m00racle@arch1VM lab4_minmax]$ ./a.out 
+Method1: Max value for signed short data-type: 32767
+Method2: Max value for signed short data-type: 32767
+Method3: Max value for signed short data-type: 32767
+Method4: Max value for signed short data-type: 32767
+[m00racle@arch1VM lab4_minmax]$ cc shortmin.c 
+[m00racle@arch1VM lab4_minmax]$ ./a.out 
+Method1: Min value for signed short data-type: -32768
+Method2: Min value for signed short data-type: -32768
+Method3: Min value for signed short data-type: -32768
+Method4: Min value for signed short data-type: -32768
+[m00racle@arch1VM lab4_minmax]$ cc unsignshortmax.c 
+[m00racle@arch1VM lab4_minmax]$ ./a.out 
+Method1: Max value for unsigned short data-type: 65535
+Method2: Max value for unsigned short data-type: 65535
+Method3: Max value for unsigned short data-type: 65535
+Method4: Max value for unsigned short data-type: 65535
+[m00racle@arch1VM lab4_minmax]$ cc unsignshortmin.c 
+[m00racle@arch1VM lab4_minmax]$ ./a.out 
+Method1: Min value for unsigned short data-type: 0
+Method2: Min value for unsigned short data-type: 0
+Method3: Min value for unsigned short data-type: 0
+Method4: Min value for unsigned short data-type: 0
