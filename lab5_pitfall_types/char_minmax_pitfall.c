@@ -13,5 +13,8 @@ int main() {
 }
 
 /*
- *This should return False 
+ * This should return False 
+ *
+ * This is because a in ASCII is 64 and B in ASCII is what?
+ * TODO: find out the ASCII code for a and b
  * */
