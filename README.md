@@ -1,6 +1,6 @@
 # Advanced C Course LAB
 
-This is the Git for the Advanced C course.
+This is the Labs for the Advanced C course to practice coding and understand the philosophy behind them.
 Why do I pick C to learn advanced programming? Well I think to learn advanced programming it will be better to use low level language.
 
 Since it is low level programming language thus I can focus more on how things are done behind the scene.
