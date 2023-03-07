@@ -7,11 +7,11 @@ struct emp {
 	char emp_name[30];
 };
 // NOTE: remember struct definition always ends with ; 
-
-int main() {
-	// instantiate the struct
+// instantiate the struct
 	struct emp e;
 
+
+int main() {
 	// I want to capture the user input as the data source:
 	printf("Enter the employee number: ");
 	// use scanf to capture the user input:
@@ -30,5 +30,10 @@ int main() {
 	printf("Address of Emp Id   : %p\n", &e.emp_id);
 	printf("Address of Emp Name : %p\n", &e.emp_name);
 	// again for e.emp_name with or without & is the same thing.
+	
+	// test the size of memory allocated:
+	printf("Memory Allocated for Emp_id   : %d bytes\n", sizeof(e.emp_id));
+	printf("Memory Allocated for Emp_name : %d bytes\n", sizeof(e.emp_name));
+	printf("Memory Allocated for the whole struct : %d bytes\n", sizeof(e));
 	return 0;
 }
