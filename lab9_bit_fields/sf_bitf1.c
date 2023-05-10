@@ -14,11 +14,14 @@ int main() {
 	sch.f1 = 1;
 	sch.f2 = 2;
 	sch.f3 = 6;
+	//sch.res1 = 1;
+	//sch.res2 = 1;
 
 	// let's test
 	printf("testing stchar sch:\n");
 	printf("address of struct sch : %p\n", &sch);
-	printf("sch: %d\n", &sch);
+	printf("sch: %d\n", sch);
+	printf("sch in hex: %x\n", sch);
 	printf("=========================\n");
 	printf("pointer value f1  : %p\n", sch.f1);
 	printf("pointer value res1: %p\n", sch.res1);
