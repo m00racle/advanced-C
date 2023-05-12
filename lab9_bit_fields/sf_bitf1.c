@@ -14,8 +14,8 @@ int main() {
 	sch.f1 = 1;
 	sch.f2 = 2;
 	sch.f3 = 6;
-	//sch.res1 = 1;
-	//sch.res2 = 1;
+	sch.res1 = 1;
+	sch.res2 = 0;
 
 	// let's test
 	printf("testing stchar sch:\n");
