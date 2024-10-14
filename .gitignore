@@ -1001,16 +1001,19 @@ _deps
 *.ilk
 *.map
 *.exp
+*.s
 
 # Precompiled Headers
 *.gch
 *.pch
+*.i
 
 # Libraries
 *.lib
 *.a
 *.la
 *.lo
+*.bc
 
 # Shared objects (inc. Windows DLLs)
 *.dll
