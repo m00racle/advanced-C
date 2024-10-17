@@ -26,6 +26,11 @@ int main()
 	
 	// un-comment these lines if wish to run the code
 	
+	// NOTE: the (int) in each printf are type casting to ensure no warning when compiled
+	// casting requried because although sizeof function should return int but it is not 
+	// defined yet thus it needs to be casted as guarantee when using the type placeholder %d
+	// which is used to process as string placeholder for type int
+	
 	printf("size of c = %d, %d\n", (int) sizeof(char), (int) sizeof(c));
 	printf("size of cp = %d, %d\n", (int) sizeof(*cp), (int) sizeof(cp));
 
