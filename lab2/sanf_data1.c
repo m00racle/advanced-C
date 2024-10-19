@@ -25,17 +25,19 @@ int main()
 //	void v, *vp;
 	
 	// un-comment these lines if wish to run the code
+	printf("size of each variable declaration (in byte(s):\n");
 	
 	// NOTE: the (int) in each printf are type casting to ensure no warning when compiled
 	// casting requried because although sizeof function should return int but it is not 
 	// defined yet thus it needs to be casted as guarantee when using the type placeholder %d
 	// which is used to process as string placeholder for type int
 	
-	printf("size of c = %d, %d\n", (int) sizeof(char), (int) sizeof(c));
-	printf("size of cp = %d, %d\n", (int) sizeof(*cp), (int) sizeof(cp));
+	printf("char data type = %d, char type variable c = %d\n", (int) sizeof(char), (int) sizeof(c));
+	printf("char in address de-referenced *cp = %d, pointer cp = %d\n", (int) sizeof(*cp), (int) sizeof(cp));
 
 	printf("size of s = %d, %d\n", (int) sizeof(short), (int) sizeof(s));
 	printf("size of sp = %d, %d\n", (int) sizeof(*sp), (int) sizeof(sp));
+	printf("short data type = %d, short type variable s = %d\n", (int) sizeof(short), (int) sizeof(s));
 
 	printf("size of i = %d, %d\n", (int) sizeof(int), (int) sizeof(i));
 	printf("size of ip = %d, %d\n", (int) sizeof(*ip), (int) sizeof(ip));
