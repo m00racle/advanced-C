@@ -35,24 +35,23 @@ int main()
 	printf("char data type = %d, char type variable c = %d\n", (int) sizeof(char), (int) sizeof(c));
 	printf("char in address de-referenced *cp = %d, pointer cp = %d\n", (int) sizeof(*cp), (int) sizeof(cp));
 
-	printf("size of s = %d, %d\n", (int) sizeof(short), (int) sizeof(s));
-	printf("size of sp = %d, %d\n", (int) sizeof(*sp), (int) sizeof(sp));
 	printf("short data type = %d, short type variable s = %d\n", (int) sizeof(short), (int) sizeof(s));
+	printf("short in address de-referencd *sp = %d, pointer sp = %d\n", (int) sizeof(*sp), (int) sizeof(sp));
 
-	printf("size of i = %d, %d\n", (int) sizeof(int), (int) sizeof(i));
-	printf("size of ip = %d, %d\n", (int) sizeof(*ip), (int) sizeof(ip));
+	printf("int data type = %d, int type variable i = %d\n", (int) sizeof(int), (int) sizeof(i));
+	printf("int in address de-referenced *ip = %d, pointer ip = %d\n", (int) sizeof(*ip), (int) sizeof(ip));
 
-	printf("size of l = %d, %d\n", (int) sizeof(long), (int) sizeof(l));
-	printf("size of lp = %d, %d\n", (int) sizeof(*lp), (int) sizeof(lp));
+	printf("long data type = %d, long type variable l = %d\n", (int) sizeof(long long), (int) sizeof(l));
+	printf("long in address de-referenced *lp = %d, pointer lp = %d\n", (int) sizeof(*lp), (int) sizeof(lp));
 
-	printf("size of ll = %d, %d\n", (int) sizeof(long long), (int) sizeof(ll));
-	printf("size of llp = %d, %d\n", (int) sizeof(*llp), (int) sizeof(llp));
+	printf("long long date type = %d, long long type variable ll = %d\n", (int) sizeof(long long), (int) sizeof(ll));
+	printf("long long in address de-referenced *llp = %d, pointer llp = %d\n", (int) sizeof(*llp), (int) sizeof(llp));
 	
-	printf("size of f = %d, %d\n", (int) sizeof(float), (int) sizeof(f));
-	printf("size of fp = %d, %d\n", (int) sizeof(*fp), (int) sizeof(fp));
+	printf("float data type = %d, float type variable f = %d\n", (int) sizeof(float), (int) sizeof(f));
+	printf("float in address de-referenced *fp = %d, pointer fp = %d\n", (int) sizeof(*fp), (int) sizeof(fp));
 
-	printf("size of df = %d, %d\n", (int) sizeof(double), (int) sizeof(df));
-	printf("size of dfp = %d, %d\n", (int) sizeof(*dfp), (int) sizeof(dfp));
+	printf("double data type = %d, double type variable df = %d\n", (int) sizeof(double), (int) sizeof(df));
+	printf("double in address de-referenced *dfp = %d, pointer dfp = %d\n", (int) sizeof(*dfp), (int) sizeof(dfp));
 
 	printf("size of 100 = %d\n", (int) sizeof(100));
 
