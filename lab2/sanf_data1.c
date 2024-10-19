@@ -25,7 +25,7 @@ int main()
 //	void v, *vp;
 	
 	// un-comment these lines if wish to run the code
-	printf("size of each variable declaration (in byte(s):\n");
+	printf("size of each variable declaration (in byte(s)):\n");
 	
 	// NOTE: the (int) in each printf are type casting to ensure no warning when compiled
 	// casting requried because although sizeof function should return int but it is not 
