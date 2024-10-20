@@ -21,8 +21,8 @@ int main()
 	float f, *fp;
 	double df, *dfp;
 
-//	WARNING: uncomment this void declaration will invoke compiler error!
-//	void v, *vp;
+	void *vp;
+	// void can only works if it was assign to pointer but the memory allocated seems off
 	
 	// un-comment these lines if wish to run the code
 	printf("size of each variable declaration (in byte(s)):\n");
@@ -59,8 +59,7 @@ int main()
 
 	printf("size of 0xFFFFFFFFFF = %d\n", (int) sizeof(0xFFFFFFFFFF));
 
-//	WARNING: These code when un-commented will invoke compiler error:
-//	printf("size of v = %d, %d\n", sizeof(void), sizeof(v));
-//	printf("size of vp = %d\n", sizeof(vp));
+	printf("void type = %d\n", (int) sizeof(void));
+	printf("void in address de-referenced *vp = %d, pointer vp = %d\n", (int) sizeof(*vp), (int) sizeof(vp));
 
 }
