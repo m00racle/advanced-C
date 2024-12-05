@@ -1,9 +1,13 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <limits.h>
 
 // declaring functions
 
 int* maxSubArray(int *A, int A_length);
+
+// declaring max-crossing-subarray
+int* FindMaxCrossingSubarray(int *A, int low, int mid, int high);
 
 int main()
 {
@@ -20,11 +24,74 @@ int main()
     return 0;
 }
 
-int* maxSubArray(int *A, int A_length)
+// define MaxCrossing function
+int* FindMaxCrossingSubarray(int *A, int low, int mid, int high)
 {
-    // find the location and max sum of the subarray
-    // with A : array as argument
+    /* 
+        process max-crossing sub array
+        A = array of integers pointer
+        low (int) = lowest index in the array A 
+        mid (int) = the middle point index in array A
+        high (int) = the high point index in array A
+     */
 
+    // initial left-sum
+    int left_sum = INT_MIN;
+    int sum = 0;
+    int max_left;
+    int max_right;
+    
+    //decrement the index in array A from mid to low:
+    for (int i = mid; i >= low; i--)
+    {
+        // find the max in left
+        sum = sum + A[i];
+        if (sum > left_sum)
+        {
+            // put this as the maximum sum on the left
+            left_sum = sum;
+            max_left = i;
+        }
+    }
+
+    //now intialize the condition for the right side mid + i index
+    int right_sum = INT_MIN;
+    sum = 0;
+
+    // increment the index in array A from mid + 1 to high;
+    for (int j = mid + 1; j <= high; j++)
+    {
+        // find the max in the right 
+        sum = sum + A[j];
+        if (sum > right_sum)
+        {
+            // put this as the maximum sum of the right
+            right_sum = sum;
+            max_right = j;
+        }
+    }
+
+    // preparing the array to be returned : NOTE: it must be static to survive the end of scope
+    static int result[3];
+    // You can't directly initialize result[3] = {max_left, max_right, left_sum + right_sum}
+    // because they are not constants, thus you need to assign them later 
+    result[0] = max_left;
+    result[1] = max_right;
+    result[2] = left_sum + right_sum;
+
+    return result;
+}
+
+
+int* maxSubArray(int *A, int A_length) // DEPRECATED!
+{
+    /* DEPRECATED!
+    Finding maximum sub-array from origina array (A)
+
+    Parameters:
+        - A (static int array) : pointer (must be STATIC to survive the end of scope destruct)
+        - A_length (int) : length of the A array
+     */
     // declare array for return start, end, max sum of the sub array
     static int max_data[3] = {0, 0, 0};
     int max_sum = 0;
