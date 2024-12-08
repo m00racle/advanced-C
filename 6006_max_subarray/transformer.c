@@ -6,6 +6,9 @@
 
 int* maxSubArray(int *A, int A_length);
 
+// declare find max subarray
+int* FindMaxSubarray(int* A, int low, int high);
+
 // declaring max-crossing-subarray
 int* FindMaxCrossingSubarray(int *A, int low, int mid, int high);
 
@@ -15,13 +18,77 @@ int main()
     int sample1[] = {13, -3, -25, 20, -3, -16, -23, 18, 20, -7, 12, -5, -22, 15, -4, 7};
     // WARNING: you need to define sample length here because if you pass it to 
     // function maxSubarray and tell it to measure size of it will be shrunk.
+    
+    // TODO: make various test thus put this part of main func into separate function:
     int sample_length = sizeof(sample1)/sizeof(sample1[0]);
-    int* results = maxSubArray(sample1, sample_length);
+    int* results = FindMaxSubarray(sample1, 0, sample_length - 1);
     printf("results 1: ");
     for (int i = 0; i <3; i++){
        printf("%d ", results[i]);
     }
     return 0;
+}
+
+// define FindMaxSubarray(int* A, int low, int high)
+int* FindMaxSubarray(int* A, int low, int high)
+{
+    /* 
+    Find Sub-array that will returns the best results
+
+    Parameters:
+    A (Array of int that MUST be static) 
+    low (int) = the lowest index the start of the (sub) array
+    high (int) = the highest index for the end of the (sub) array
+    */
+
+    // define
+    static int max_data[3] = {0, 0, 0};
+    int sum = 0;
+    int max_sum = 0;
+    int start = low; // start index of contiguous sub array
+    int end; // end indes of the contiguous sub array
+    
+    // iterate all array to find max sub array
+    for (int i = low; i <= high; i++)
+    {
+        // addind to the next 
+        sum = sum + A[i];
+
+        // only put contagous sub array if the sum is higher 
+        if (sum > max_sum)
+        {
+            // put the max data
+            max_sum = sum;
+            end = i + 1;
+        } else if (sum < 0)
+        {
+            // meaning there are new lows to be start
+            // but first maintain the latest max sum
+            if (max_sum > max_data[2])
+            {
+                // put the data into max_data
+                max_data[0] = start;
+                max_data[1] = end;
+                max_data[2] = max_sum;
+            }
+
+            // because it is new low take it as new start
+            start = i + 1;
+            // reset the sum back to 0
+            sum = 0;
+        }
+    }
+
+    // filter the last result compare to the max data
+    if (max_sum > max_data[2])
+    {
+        // put the data into max_data
+        max_data[0] = start;
+        max_data[1] = end;
+        max_data[2] = max_sum;
+    }
+
+    return max_data;
 }
 
 // define MaxCrossing function
