@@ -13,8 +13,8 @@ void MergeSort(int* A, int p, int r);
 // define main function return int
 int main()
 {
-    // creating static array
-    static int sample[] = {5,2,4,7,1,3,-2,6};
+    // creating static array (You don't need Static array since main function scope last till the run end)
+    int sample[] = {5,2,4,7,1,3,-2,6};
     int p = 0;
     int r = sizeof(sample)/sizeof(sample[0]) - 1;
     
