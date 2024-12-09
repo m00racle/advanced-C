@@ -12,20 +12,34 @@ int* FindMaxSubarray(int* A, int low, int high);
 // declaring max-crossing-subarray
 int* FindMaxCrossingSubarray(int *A, int low, int mid, int high);
 
+void test_run(int *A, int length, char* test_msg)
+{
+    /*  
+        helper function to test run and print out the results
+
+        Parameters:
+            - A (int pointer to array) : the array to maximized
+            - length (int) : length of the array
+    */
+
+    // select the method to find maximum sub-array
+    int *results = FindMaxSubarray(A, 0, length - 1);
+    
+    // print out the results
+    printf("Test Run %s results: ", test_msg);
+    for (int i = 0; i <3; i++){
+       printf("%d ", results[i]);
+    }
+}
+
 int main()
 {
     // preparing to find max subarray
     int sample1[] = {13, -3, -25, 20, -3, -16, -23, 18, 20, -7, 12, -5, -22, 15, -4, 7};
-    // WARNING: you need to define sample length here because if you pass it to 
-    // function maxSubarray and tell it to measure size of it will be shrunk.
     
-    // TODO: make various test thus put this part of main func into separate function:
-    int sample_length = sizeof(sample1)/sizeof(sample1[0]);
-    int* results = FindMaxSubarray(sample1, 0, sample_length - 1);
-    printf("results 1: ");
-    for (int i = 0; i <3; i++){
-       printf("%d ", results[i]);
-    }
+    // pass the sample to test run:
+    test_run(sample1, sizeof(sample1)/sizeof(sample1[0]), "sample 1");
+
     return 0;
 }
 
