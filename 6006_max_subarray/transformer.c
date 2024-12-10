@@ -26,7 +26,7 @@ void test_run(int *A, int length, char* test_msg)
     int *results = FindMaxSubarray(A, 0, length - 1);
     
     // print out the results
-    printf("Test Run %s results: ", test_msg);
+    printf("\nTest Run %s results: ", test_msg);
     for (int i = 0; i <3; i++){
        printf("%d ", results[i]);
     }
@@ -36,9 +36,13 @@ int main()
 {
     // preparing to find max subarray
     int sample1[] = {13, -3, -25, 20, -3, -16, -23, 18, 20, -7, 12, -5, -22, 15, -4, 7};
+    int sample2[] = {1,2,3,4,5};
+    int sample3[] = {-1, -2, -3, -4};
     
     // pass the sample to test run:
     test_run(sample1, sizeof(sample1)/sizeof(sample1[0]), "sample 1");
+    test_run(sample2, sizeof(sample2)/sizeof(sample2[0]), "sample 2");
+    test_run(sample3, sizeof(sample3)/sizeof(sample3[0]), "sample 3");
 
     return 0;
 }
@@ -56,7 +60,15 @@ int* FindMaxSubarray(int* A, int low, int high)
     */
 
     // define
-    static int max_data[3] = {0, 0, 0};
+    static int max_data[3];
+    // reset back to zero since max_data is static to ensure clean start for multiple calls.
+    // note you can't just use max_data = {0, 0, 0}!
+    for (int i = 0; i < 3; i++)
+    {
+        max_data[i] = 0;
+    }
+
+    // initialize other variables:
     int sum = 0;
     int max_sum = 0;
     int start = low; // start index of contiguous sub array
