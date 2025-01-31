@@ -49,6 +49,9 @@ int main()
 	printf("c char = 682, display value c = %d\n", c = 682);
 	printf("c char = 682, hex value c = 0x%x\n", c);
 	printf("i int = 682, hex value i int = x%x\n", i = 682);
+	printf("c char = -255, display value c = %d\n", c = -255);
+	printf("c char = -255, hex value c = 0x%x\n", c);
+	printf("i int = -255, hex value i int = x%x\n", i = -255);
 
 	return 0;
 }
