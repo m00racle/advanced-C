@@ -1,26 +1,61 @@
-$ cc sf-datatype-binary.c -o displayed.out 
-sf-datatype-binary.c: In function ‘main’:
-sf-datatype-binary.c:18:57: warning: overflow in conversion from ‘int’ to ‘char’ changes value from ‘256’ to ‘0’ [-Woverflow]
-   18 |         printf("c = 256, displayed value c = %d\n", c = 256);
-
-This warning come out because I try to display 256 in char data type 
-memory allocation which is not long enough
-
-$ ./displayed.out 
-c = 255, displayed value c = -1
-c = 128, displayed value c = -128
-c = -1 , displayed value c = ffffffff
-c = 256, displayed value c = 0
-
-But When I run ./displayed.out it still displayed as 0 and not overflow. 
-(Read the review for more info)
-
-Full Run Result of lab3 sf-datatype-binary.c:
-$ ./displayed.out 
-c = 255, displayed value c = -1
-c = 128, displayed value c = -128
-c = -1 , displayed value c = ffffffff
-c = 256, displayed value c = 0
-i = -2 , displayed value i = fffffffe
-i = 256, displayed value i = 100
-i =-256, displayed value i = ffffff00
+----------------------------------------
+case: input positive NOT OVERFLOW output positive
+c char = 82, displayed value c = 82
+c char = 82, hex value c = 0x52
+i int = 82, hex value of i int = 0x52
+----------------------------------------
+case: input negative NOT OVERFLOW output negative
+c char = -82, displayed value c = -82
+c char = -82, hex value c = 0xffffffae
+i int = -82, hex value of i int = 0xffffffae
+----------------------------------------
+case: input positive OVERFLOW output negative
+c char = 682, displayed value c = -86
+c char = 682, hex value c = 0xffffffaa
+i int = 682, hex value of i int = 0x2aa
+----------------------------------------
+case: input negative OVERFLOW output positive
+c char = -682, displayed value c = 86
+c char = -682, hex value c = 0x56
+i int = -682, hex value of i int = 0xfffffd56
+----------------------------------------
+case: input positive OVERFLOW output positive
+c char = 341, displayed value c = 85
+c char = 341, hex value c = 0x55
+i int = 341, hex value of i int = 0x155
+----------------------------------------
+case: input negative OVERFLOW output negative
+c char = -341, displayed value c = -85
+c char = -341, hex value c = 0xffffffab
+i int = -341, hex value of i int = 0xfffffeab
+----------------------------------------
+case: special case of 1111 1111 = 255
+c char = 255, displayed value c = -1
+c char = 255, hex value c = 0xffffffff
+i int = 255, hex value of i int = 0xff
+----------------------------------------
+case: special case of inverse 0000 0001 = -255
+c char = -255, displayed value c = 1
+c char = -255, hex value c = 0x1
+i int = -255, hex value of i int = 0xffffff01
+----------------------------------------
+case: special case of 0001 0000 0000 = 256
+c char = 256, displayed value c = 0
+c char = 256, hex value c = 0x0
+i int = 256, hex value of i int = 0x100
+----------------------------------------
+case: special case of inverse 0001 0000 0000 = -256
+c char = -256, displayed value c = 0
+c char = -256, hex value c = 0x0
+i int = -256, hex value of i int = 0xffffff00
+----------------------------------------
+case: special case of 0000 1000 0000 = 128
+c char = 128, displayed value c = -128
+c char = 128, hex value c = 0xffffff80
+i int = 128, hex value of i int = 0x80
+----------------------------------------
+case: special case of inverse 1111 1000 0000 = -128
+c char = -128, displayed value c = -128
+c char = -128, hex value c = 0xffffff80
+i int = -128, hex value of i int = 0xffffff80
+----------------------------------------
